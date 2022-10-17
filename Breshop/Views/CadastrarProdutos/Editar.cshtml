@@ -1,0 +1,70 @@
+﻿@model Breshop.Models.Produto
+
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="pt">
+<head>
+    <meta charset="utf-8">
+    <title>Criar Produto</title>
+    <link rel="stylesheet" href="~/css/nicepage.css" />
+    <link rel="stylesheet" href="~/css/CriarProduto.css" />
+    <script class="u-script" type="text/javascript" src="~/js/jquery.js"></script>
+    <script class="u-script" type="text/javascript" src="~/js/nicepage.js"></script>
+    <script class="u-script" type="text/javascript" src="~/js/CadastrarProduto/Editar.js"></script>
+</head>
+<body class="u-body u-xl-mode" data-lang="pt">
+    <input value="@ViewBag.Message" type="hidden" id="mensagem" />
+    <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="grid-criar-produto">
+            <h2>Atualizar Produto</h2>
+            <form asp-action="Editar" method="post" enctype="multipart/form-data">
+                <div class="u-container-style u-list-item u-repeater-item">
+                    <label asp-for="Categoria" class="control-label">Categoria: </label>
+                    <span asp-validation-for="Categoria" class="text-danger"></span>
+                    <select asp-for="Categoria">
+                        <option value="Calcado">Calçados</option>
+                        <option value="Feminino">Feminino</option>
+                        <option value="Ofertas">Ofertas</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Infantil">Infantil</option>
+                        <option value="Relogios">Relógios</option>
+                    </select>
+                </div>
+                <input asp-for="IdProduto" type="hidden" value="@Model.IdProduto" class="form-control" id="idProduto" />
+                <span asp-validation-for="IdProduto" typeof="hidden"></span>
+                <div class="u-container-style u-list-item u-repeater-item">
+                    <label asp-for="Descricao" class="control-label">Descrição: </label>
+                    <input asp-for="Descricao" required class="form-control" />
+                    <span asp-validation-for="Descricao" class="text-danger"></span>
+                </div>
+                <div class="u-container-style u-list-item u-repeater-item">
+                    <label asp-for="Tamanho" class="control-label">Tamanho: </label>
+                    <input asp-for="Tamanho" class="form-control" />
+                    <span asp-validation-for="Tamanho" class="text-danger"></span>
+                </div>
+                <div class="u-container-style u-list-item u-repeater-item">
+                    <label asp-for="Preco" class="control-label">Preço: </label>
+                    <input asp-for="Preco" type="number" required min="1" class="form-control" />
+                    <span asp-validation-for="Preco" class="text-danger"></span>
+                </div>
+                <div class="u-container-style u-list-item u-repeater-item">
+                    <label asp-for="Marca" class="control-label">Marca: </label>
+                    <input asp-for="Marca" required class="form-control" />
+                    <span asp-validation-for="Marca" class="text-danger"></span>
+                </div>
+                <div class="u-container-style u-list-item u-repeater-item">
+                    <input asp-for="Imagem" type="file" class="form-control" />
+                    <span asp-validation-for="Imagem" class="text-danger"></span>
+                </div>
+                <div class="u-container-style u-list-item u-repeater-item">
+                    <input asp-for="UrlImagem" type="hidden" required class="form-control" />
+                </div>
+                <div class="u-container-style u-list-item u-repeater-item">
+                    <input type="submit" value="Atualizar" class="btn btn-default" />
+                    <a asp-controller="CadastrarProdutos" asp-action="Index"><input type="button" value="Voltar" /></a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+
