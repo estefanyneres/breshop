@@ -7,11 +7,19 @@
 }
 
 .tabela-produtos{
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-
-
+.tabela-produtos p a{
+    background: #5b1f00;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: white;
+}
+/*e09248**/
+/*eaaa60*/
 
 
 

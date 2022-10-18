@@ -12630,11 +12630,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lab54\\Desktop\\BreshopNovo\\Breshop-Feature-Cicero\\Breshop\\Breshop.csproj",
+      "projectUniqueName": "C:\\Users\\lab54\\Desktop\\breshop\\breshop\\Breshop\\Breshop.csproj",
       "projectName": "Breshop",
-      "projectPath": "C:\\Users\\lab54\\Desktop\\BreshopNovo\\Breshop-Feature-Cicero\\Breshop\\Breshop.csproj",
+      "projectPath": "C:\\Users\\lab54\\Desktop\\breshop\\breshop\\Breshop\\Breshop.csproj",
       "packagesPath": "C:\\Users\\lab54\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lab54\\Desktop\\BreshopNovo\\Breshop-Feature-Cicero\\Breshop\\obj\\",
+      "outputPath": "C:\\Users\\lab54\\Desktop\\breshop\\breshop\\Breshop\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
