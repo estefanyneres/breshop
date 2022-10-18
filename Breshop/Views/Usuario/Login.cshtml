@@ -1,0 +1,32 @@
+﻿@model Breshop.Models.Usuario
+
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="~/css/Usuario.css" />
+    <script class="u-script" type="text/javascript" src="~/js/Usuario/Usuario.js"></script>
+</head>
+<body class="u-body u-xl-mode" data-lang="pt">
+    <div class="login-page">
+        <div class="form">
+            <form class="register-form">
+                <input type="text" placeholder="name" />
+                <input type="password" placeholder="password" />
+                <input type="text" placeholder="email address" />
+                <button>create</button>
+                @*<p class="message">Already registered? <a href="#">Sign In</a></p>*@
+            </form>
+            <form asp-action="LogarUsuario" class="login-form">
+                <label asp-for="Email" class="control-label">Email: </label>
+                <input asp-for="Email" required class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+                <label asp-for="Senha" class="control-label">Email: </label>
+                <input asp-for="Senha" required class="form-control" />
+                <span asp-validation-for="Senha" class="text-danger"></span>
+                <button type="submit">login</button>
+                @*<p class="message">Not registered? <a href="#">Create an account</a></p>*@
+            </form>
+        </div>
+    </div>
+</body>
+
+

@@ -21,5 +21,7 @@ namespace Breshop.Models
 
         public string Endereco { get; set; }
 
+        public string Senha { get; set; }
+
     }
 }
