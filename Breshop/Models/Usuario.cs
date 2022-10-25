@@ -11,15 +11,7 @@ namespace Breshop.Models
         [Key]
         public int IdUsuario { get; set; }
 
-        public string Nome { get; set; }
-
         public string Email { get; set; }
-
-        public double Celular { get; set; }
-
-        public string CEP { get; set; }
-
-        public string Endereco { get; set; }
 
         public string Senha { get; set; }
 

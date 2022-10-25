@@ -18,6 +18,25 @@ namespace Breshop.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("Breshop.Models.Carrinho", b =>
+                {
+                    b.Property<int>("IdCarrinho")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("IdProduto");
+
+                    b.Property<string>("MetodoPagamento");
+
+                    b.Property<int>("Quantidade");
+
+                    b.Property<decimal>("Valor");
+
+                    b.HasKey("IdCarrinho");
+
+                    b.ToTable("Carrinho");
+                });
+
             modelBuilder.Entity("Breshop.Models.Produto", b =>
                 {
                     b.Property<int>("IdProduto")
@@ -31,8 +50,6 @@ namespace Breshop.Migrations
                     b.Property<string>("Marca");
 
                     b.Property<double>("Preco");
-
-                    b.Property<string>("Sexo");
 
                     b.Property<string>("Tamanho");
 
@@ -49,15 +66,9 @@ namespace Breshop.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("CEP");
-
-                    b.Property<double>("Celular");
-
                     b.Property<string>("Email");
 
-                    b.Property<string>("Endereco");
-
-                    b.Property<string>("Nome");
+                    b.Property<string>("Senha");
 
                     b.HasKey("IdUsuario");
 

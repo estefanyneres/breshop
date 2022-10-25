@@ -36,6 +36,8 @@ namespace Breshop
             // Injeção de dependencia
             services.AddTransient<IProdutoService, ProdutoService>();
             services.AddTransient<IProdutoRepository, ProdutoRepository>();
+            services.AddTransient<IUsuarioRepository, UsuarioRepository>();
+            services.AddTransient<IUsuarioService, UsuarioService>();
 
             services.AddDbContext<BreshopContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("BreshopContext")));

@@ -2,14 +2,17 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Breshop.Models;
+using Breshop.Intefaces;
 
 namespace Breshop.Controllers
 {
     public class UsuarioController : Controller
     {
+        private readonly IUsuarioService _usuarioService;
 
-        public UsuarioController()
+        public UsuarioController(IUsuarioService produtoService)
         {
+            _usuarioService = produtoService;
         }
 
         public async Task<IActionResult> Login()
@@ -28,18 +31,16 @@ namespace Breshop.Controllers
             }
         }
 
-        public async Task<IActionResult> LogarUsuario()
+        public async Task<IActionResult> LogarUsuario(Usuario usuario)
         {
             try
             {
-                Usuario usuario = new Usuario();
+                bool usuarioExistente = _usuarioService.ValidarUsuario(usuario);
 
                 return View(usuario);
             }
             catch (Exception)
             {
-                Usuario usuario = new Usuario();
-
                 return View(usuario);
             }
         }
