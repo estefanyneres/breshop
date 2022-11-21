@@ -20,7 +20,7 @@ namespace Breshop.Controllers
         {
             try
             {
-                List<Produto> produtos = new List<Produto>();
+                List<Produto> produtos = _produtoService.ListarProdutos();
 
                 return View(produtos);
             }

@@ -111,7 +111,7 @@ namespace Breshop.Repository
 
             try
             {
-                produtos = _context.Produto.OrderBy(x => x.Categoria).ToList();
+                produtos = _context.Produto.OrderBy(x => x.UrlImagem).ToList();
 
                 return produtos;
             }

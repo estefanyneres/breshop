@@ -51,16 +51,28 @@
                     <input asp-for="Marca" required class="form-control" />
                     <span asp-validation-for="Marca" class="text-danger"></span>
                 </div>
-                <div class="u-container-style u-list-item u-repeater-item">
-                    <input asp-for="Imagem" type="file" class="form-control" />
-                    <span asp-validation-for="Imagem" class="text-danger"></span>
-                </div>
-                <div class="u-container-style u-list-item u-repeater-item">
-                    <input asp-for="UrlImagem" type="hidden" required class="form-control" />
-                </div>
+                @if (Model.UrlImagem != null)
+                {
+                    <div class="u-container-style u-list-item u-repeater-item">
+                        <input asp-for="Imagem" class="btn-default" type="file" onchange="SalvarImagem()" id="atualizar-imagem" />
+                    </div>
+                    <div class="u-container-style u-list-item u-repeater-item">
+                        <img src="@Model.UrlImagem" alt="" class="img-produto">
+                    </div>
+                }
+                else
+                {
+                    <div class="u-container-style u-list-item u-repeater-item">
+                        <input asp-for="Imagem" class="btn-default" type="file" class="form-control" />
+                        <span asp-validation-for="Imagem" class="text-danger"></span>
+                    </div>
+                    <div class="u-container-style u-list-item u-repeater-item">
+                        <input asp-for="UrlImagem" type="hidden" required class="form-control" />
+                    </div>
+                }
                 <div class="u-container-style u-list-item u-repeater-item">
                     <input type="submit" value="Atualizar" class="btn btn-default" />
-                    <a asp-controller="CadastrarProdutos" asp-action="Index"><input type="button" value="Voltar" /></a>
+                    <a asp-controller="CadastrarProdutos" asp-action="Index"><input class="btn-default" type="button" value="Voltar" /></a>
                 </div>
             </form>
         </div>

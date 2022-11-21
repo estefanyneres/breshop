@@ -71,12 +71,12 @@ using Breshop.Models;
             WriteLiteral("\r\n<!DOCTYPE html>\r\n<html style=\"font-size: 16px;\" lang=\"pt\">\r\n");
             EndContext();
             BeginContext(93, 1326, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3f9543683d4943988d9a283a2636f063", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bc7e0847d0444a8d9819bd6129826cc8", async() => {
                 BeginContext(99, 249, true);
                 WriteLiteral("\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <meta charset=\"utf-8\">\r\n    <meta name=\"keywords\" content=\"Tendencias, Ofertas da semana\">\r\n    <meta name=\"description\" content=\"\">\r\n    <title>Calçados</title>\r\n    ");
                 EndContext();
                 BeginContext(348, 51, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "2b707bd7ee124a10a7387dc08eb6ed0a", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "718b5c203eb048afa64132e7a60699dc", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -95,7 +95,7 @@ using Breshop.Models;
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(405, 51, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "69ed1abd7dc34881bedec8a3078084e8", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "71efb69603234be98db969827df9add8", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -114,7 +114,7 @@ using Breshop.Models;
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(462, 78, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a456e07f21c4b7c9f3bd7197a9ad42e", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0b264d96c6de4d319f97225fd7c976b6", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -134,7 +134,7 @@ using Breshop.Models;
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(546, 80, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9bfe30e983ca42549e61568255a4b74e", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "112ab6d3c3eb47b184e4e89d6dfa3faf", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -180,7 +180,7 @@ using Breshop.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(1421, 16201, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "81ebbd5cf8f04e3d80072b47d8f987ce", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a6e19b0d26534121bffd7a4e84fd4c6d", async() => {
                 BeginContext(1467, 10754, true);
                 WriteLiteral(@"
         <div class=""grid-produto"">
@@ -282,7 +282,7 @@ using Breshop.Models;
                                     ");
                 EndContext();
                 BeginContext(12221, 1333, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c1a6b422687e4d1493bc87e564fd1942", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8ee65d38508749b58bdba326efc3aba8", async() => {
                     BeginContext(12348, 1199, true);
                     WriteLiteral(@"
                                         <div class=""u-form-group u-block-control ui-draggable ui-draggable-handle u-block-25af-64"" style="""" data-block=""143"">

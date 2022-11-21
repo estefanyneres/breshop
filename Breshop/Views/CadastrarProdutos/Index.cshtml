@@ -18,12 +18,13 @@
             <a asp-action="Criar">Adicionar Produto</a>
         </p>
         <div class="u-container-style u-list-item u-repeater-item">
-            <label class="control-label">Categoria: </label>
+            <label class="control-label" id="Categoria-label">Categoria: </label>
             <select onchange="FiltrarPorCategoria()" id="categoria-selecionada">
                 @if (!string.IsNullOrWhiteSpace(ViewBag.CategoriaSelecionada))
                 {
                     <option value="@ViewBag.CategoriaSelecionada" selected>@ViewBag.CategoriaSelecionada</option>
                 }
+                <option value="">Todos</option>
                 <option value="Calcado">Calçados</option>
                 <option value="Feminino">Feminino</option>
                 <option value="Ofertas">Ofertas</option>
@@ -35,20 +36,23 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>
+                    <th class="titulo-produtos">
                         Categoria
                     </th>
-                    <th>
+                    <th class="titulo-produtos">
                         Preço
                     </th>
-                    <th>
+                    <th class="titulo-produtos">
                         Descrição
                     </th>
-                    <th>
+                    <th class="titulo-produtos">
                         Marca
                     </th>
-                    <th>
+                    <th class="titulo-produtos">
                         Tamanho
+                    </th>
+                    <th class="titulo-produtos">
+                        Ações
                     </th>
                 </tr>
             </thead>
@@ -74,8 +78,8 @@
                                 @Html.DisplayFor(modelItem => item.Tamanho)
                             </td>
                             <td>
-                                <a asp-action="Editar" asp-route-id="@item.IdProduto" asp-route-Categoria="@ViewBag.CategoriaSelecionada">Edit</a> |
-                                <a asp-action="Deletar" asp-route-id="@item.IdProduto" asp-route-Categoria="@ViewBag.CategoriaSelecionada">Delete</a>
+                                <a asp-action="Editar" asp-route-id="@item.IdProduto" asp-route-Categoria="@ViewBag.CategoriaSelecionada">Editar</a> |
+                                <a asp-action="Deletar" asp-route-id="@item.IdProduto" asp-route-Categoria="@ViewBag.CategoriaSelecionada">Deletar</a>
                             </td>
                         </tr>
                     }

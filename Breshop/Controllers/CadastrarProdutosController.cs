@@ -55,6 +55,11 @@ namespace Breshop.Controllers
                 return View(produto);
             }
 
+            if (SalvarImagem(produto.Imagem) == "")
+            {
+                ViewBag.Message = "Tipo da imagem não suportado! Somente jpg, png e jpeg";
+            }
+
             produto.UrlImagem = SalvarImagem(produto.Imagem);
 
             bool produtoAdicionado = _produtoService.AdicionarProduto(produto);
@@ -102,10 +107,14 @@ namespace Breshop.Controllers
             }
             if(produto.IdProduto != 0)
             {
-                produto.UrlImagem = SalvarImagem(produto.Imagem);
+                produto.UrlImagem = produtoExistente.UrlImagem;
+
+                if (produto.Imagem != null) 
+                    produto.UrlImagem = SalvarImagem(produto.Imagem);
+
                 ViewBag.Message = "Produto Atualizado com sucesso!";
                 return View(_produtoService.AtualizarProduto(produto));
-            }          
+            }
 
             return View(produtoExistente);
         }
@@ -114,25 +123,31 @@ namespace Breshop.Controllers
         {
             try
             {
-                string wwwPath = this.Environment.WebRootPath;
-                string contentPath = this.Environment.ContentRootPath;
-
                 string path = this.Environment.WebRootPath + @"\images\";
-                path = Path.Combine(path, "Produtos");
-                if (!Directory.Exists(path))
+
+                if (arquivo.ContentType == "image/jpg" || arquivo.ContentType == "image/png" || arquivo.ContentType == "image/jpeg")
                 {
-                    Directory.CreateDirectory(path);
+                    string wwwPath = this.Environment.WebRootPath;
+                    string contentPath = this.Environment.ContentRootPath;
+
+                    path = Path.Combine(path, "Produtos");
+                    if (!Directory.Exists(path))
+                    {
+                        Directory.CreateDirectory(path);
+                    }
+
+                    string fileName = Path.GetFileName(arquivo.FileName);
+                    using (FileStream stream = new FileStream(Path.Combine(path, fileName), FileMode.Create))
+                    {
+                        arquivo.CopyTo(stream);
+                    }
+
+                    path = @"/images/Produtos/" + fileName;
+
+                    return path;
                 }
 
-                string fileName = Path.GetFileName(arquivo.FileName);
-                using (FileStream stream = new FileStream(Path.Combine(path, fileName), FileMode.Create))
-                {
-                    arquivo.CopyTo(stream);
-                }
-
-                path = @"/images/Produtos/" + fileName;
-
-                return path;
+                return "";
             }
             catch (Exception ex)
             {

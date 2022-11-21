@@ -27,7 +27,7 @@ namespace Breshop.Services
             }
             catch (Exception ex)
             {
-                throw ex;
+                return false;
             }
         }
 

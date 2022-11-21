@@ -6,7 +6,7 @@
 
     if (produtoCriado != 0) {
         $('#modalPush').show();
-        $('.Conteudo-modal').html("Pedido criado com sucesso!");
+        $('.Conteudo-modal').html("Produto criado com sucesso!");
     }
 
     if (mensagem != "" && mensagem != null) {
