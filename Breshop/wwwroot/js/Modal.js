@@ -3,5 +3,6 @@ $(document).ready(function () {
 });
 
 function FecharModal() {
+
     $('#modalPush').hide();
 }

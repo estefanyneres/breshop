@@ -19,31 +19,37 @@
     padding-bottom: 20px;
 }
 
+.footer {
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    background-color: black;
+}
 
+.grid-produtos{
+    width: 5%x;
+    height: 5%;
+}
 
+.lista-produtos {
+    margin-left: 7%;
+    margin-right: 7%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,auto));
+    justify-items: center;
+    gap: 20px;
+}
 
+.imagem-produtos {
+    width: 200px;
+    height: 200px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.outras-ofertas {
+    text-align: center;
+}
 /*********************** BOOTSTRAP ***********************************/
-
-
 #footer-layout {
     position: absolute;
     bottom: 0;
@@ -19113,6 +19119,7 @@ a.pswp__share--download:hover {
 .u-repeater-item {
   display: flex;
   position: relative;
+
 }
 .u-list-control {
   display: flex;

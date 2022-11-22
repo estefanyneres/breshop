@@ -25,8 +25,7 @@
                         <option value="Feminino">Feminino</option>
                         <option value="Ofertas">Ofertas</option>
                         <option value="Masculino">Masculino</option>
-                        <option value="Infantil">Infantil</option>
-                        <option value="Relogios">Relógios</option>
+                        <option value="Relogios">Acessórios</option>
                     </select>
                 </div>
                 <input asp-for="IdProduto" type="hidden" value="@Model.IdProduto" class="form-control" id="idProduto" />
@@ -43,13 +42,17 @@
                 </div>
                 <div class="u-container-style u-list-item u-repeater-item">
                     <label asp-for="Preco" class="control-label">Preço: </label>
-                    <input asp-for="Preco" type="number" required min="1" class="form-control" />
+                    <input asp-for="Preco" type="d" required min="1" class="form-control" id="money" />
                     <span asp-validation-for="Preco" class="text-danger"></span>
                 </div>
                 <div class="u-container-style u-list-item u-repeater-item">
                     <label asp-for="Marca" class="control-label">Marca: </label>
                     <input asp-for="Marca" required class="form-control" />
                     <span asp-validation-for="Marca" class="text-danger"></span>
+                </div>
+                <div class="u-container-style u-list-item u-repeater-item">
+                    <label asp-for="EstoqueDisponivel" class="control-label">Produto vendido: </label>
+                    <input asp-for="EstoqueDisponivel" type="checkbox" class="form-control-checkbox" />
                 </div>
                 @if (Model.UrlImagem != null)
                 {

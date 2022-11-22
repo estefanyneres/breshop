@@ -1,8 +1,11 @@
 /*Alterações BRESHOP*/
-
-.footer{
-
+#btn-modal {
+    color: white;
+    background-color: #e09248;
+    align-items: center;
+    width: 20%;
 }
+
 /*********************** BOOTSTRAP ***********************************/
 .modal-open .modal {
     overflow-x: hidden;
@@ -12,7 +15,7 @@
     padding-right: 0 !important;
 }
 .modal-dialog.modal-notify.modal-info .modal-header {
-    background-color: #33b5e5;
+    background-color: #e09248;
 }
 .modal-dialog .modal-content .modal-header {
     border-top-left-radius: .125rem;
@@ -26,7 +29,7 @@
 }
 .modal-dialog.modal-notify .modal-body {
     padding: 1.5rem;
-    color: #616161;
+    color: #e09248;
 }
 
 .flex-center {
@@ -42,7 +45,7 @@
     height: 100%;
 }
 .modal-dialog.modal-notify.modal-info .modal-header {
-    background-color: #33b5e5;
+    background-color: #e09248;
 }
 .modal-dialog .modal-content .modal-header {
     border-top-left-radius: .125rem;
@@ -61,13 +64,9 @@ a.waves-effect, a.waves-light {
     padding-top: .7rem;
     padding-bottom: .7rem;
 }
-.btn-outline-info {
-    color: #33b5e5 !important;
-    background-color: transparent !important;
-    border: 2px solid #33b5e5 !important;
-}
+
 .modal-dialog.modal-notify.modal-info .fas, .modal-dialog.modal-notify.modal-info .fab, .modal-dialog.modal-notify.modal-info .far {
-    color: #33b5e5;
+    color: #e09248;
 }
 .modal-dialog.modal-notify .heading {
     padding: .3rem;

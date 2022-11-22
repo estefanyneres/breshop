@@ -28,11 +28,11 @@ namespace Breshop.Migrations
 
                     b.Property<string>("Descricao");
 
+                    b.Property<bool>("EstoqueDisponivel");
+
                     b.Property<string>("Marca");
 
                     b.Property<double>("Preco");
-
-                    b.Property<string>("Sexo");
 
                     b.Property<string>("Tamanho");
 

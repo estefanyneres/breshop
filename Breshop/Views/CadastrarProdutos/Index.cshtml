@@ -17,7 +17,7 @@
         <p>
             <a asp-action="Criar">Adicionar Produto</a>
         </p>
-        <div class="u-container-style u-list-item u-repeater-item">
+        <div class="todos-produtos">
             <label class="control-label" id="Categoria-label">Categoria: </label>
             <select onchange="FiltrarPorCategoria()" id="categoria-selecionada">
                 @if (!string.IsNullOrWhiteSpace(ViewBag.CategoriaSelecionada))
@@ -29,8 +29,7 @@
                 <option value="Feminino">Feminino</option>
                 <option value="Ofertas">Ofertas</option>
                 <option value="Masculino">Masculino</option>
-                <option value="Infantil">Infantil</option>
-                <option value="Relogios">Relógios</option>
+                <option value="Acessorio">Acessorios</option>
             </select>
         </div>
         <table class="table">
@@ -52,6 +51,9 @@
                         Tamanho
                     </th>
                     <th class="titulo-produtos">
+                        Em estoque
+                    </th>
+                    <th class="titulo-produtos">
                         Ações
                     </th>
                 </tr>
@@ -61,27 +63,30 @@
                 {
                     @foreach (var item in Model)
                     {
-                        <tr>
-                            <td class="Categoria">
-                                @Html.DisplayFor(modelItem => item.Categoria)
-                            </td>
-                            <td class="Preco">
-                                @Html.DisplayFor(modelItem => item.Preco)
-                            </td>
-                            <td class="Descricao">
-                                @Html.DisplayFor(modelItem => item.Descricao)
-                            </td>
-                            <td class="Marca">
-                                @Html.DisplayFor(modelItem => item.Marca)
-                            </td>
-                            <td class="Tamanho">
-                                @Html.DisplayFor(modelItem => item.Tamanho)
-                            </td>
-                            <td>
-                                <a asp-action="Editar" asp-route-id="@item.IdProduto" asp-route-Categoria="@ViewBag.CategoriaSelecionada">Editar</a> |
-                                <a asp-action="Deletar" asp-route-id="@item.IdProduto" asp-route-Categoria="@ViewBag.CategoriaSelecionada">Deletar</a>
-                            </td>
-                        </tr>
+                <tr>
+                    <td class="Categoria">
+                        @Html.DisplayFor(modelItem => item.Categoria)
+                    </td>
+                    <td class="Preco">
+                        @Html.DisplayFor(modelItem => item.Preco)
+                    </td>
+                    <td class="Descricao">
+                        @Html.DisplayFor(modelItem => item.Descricao)
+                    </td>
+                    <td class="Marca">
+                        @Html.DisplayFor(modelItem => item.Marca)
+                    </td>
+                    <td class="Tamanho">
+                        @Html.DisplayFor(modelItem => item.Tamanho)
+                    </td>
+                    <td class="EstoqueDisponivel">
+                        @Html.DisplayFor(modelItem => item.EstoqueDisponivel)
+                    </td>
+                    <td>
+                        <a asp-action="Editar" asp-route-id="@item.IdProduto" asp-route-Categoria="@ViewBag.CategoriaSelecionada">Editar</a> |
+                        <a asp-action="Deletar" asp-route-id="@item.IdProduto" asp-route-Categoria="@ViewBag.CategoriaSelecionada">Deletar</a>
+                    </td>
+                </tr>
                     }
                 }
             </tbody>

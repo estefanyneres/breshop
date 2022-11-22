@@ -1,10 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Breshop.Models
 {
@@ -24,6 +20,8 @@ namespace Breshop.Models
         public string Categoria { get; set; }
 
         public string UrlImagem { get; set; }
+
+        public bool EstoqueDisponivel { get; set; }
 
         [NotMapped]
         public IFormFile Imagem { get; set; }
