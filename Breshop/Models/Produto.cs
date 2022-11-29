@@ -1,10 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Breshop.Models
 {
@@ -32,8 +28,12 @@ namespace Breshop.Models
         [Column("DS_URL_IMAGEM")]
         public string UrlImagem { get; set; }
 
+<<<<<<< HEAD
         [Column("IC_STATUS_PRODUTO")]
         public string StatusProduto { get; set; }
+=======
+        public bool EstoqueDisponivel { get; set; }
+>>>>>>> 44e381ebc68365bddf781cf04f36ed986c5500e4
 
         [NotMapped]
         public IFormFile Imagem { get; set; }

@@ -53,6 +53,7 @@ namespace Breshop.Repository
                     produtoExistente.UrlImagem = novoProduto.UrlImagem;
                     produtoExistente.Categoria = novoProduto.Categoria;
                     produtoExistente.Descricao = novoProduto.Descricao;
+                    produtoExistente.EstoqueDisponivel = novoProduto.EstoqueDisponivel;
 
                     _context.Produto.Update(produtoExistente);
                     _context.SaveChanges();

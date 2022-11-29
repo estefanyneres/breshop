@@ -3,14 +3,16 @@ using Breshop.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Breshop.Migrations
 {
     [DbContext(typeof(BreshopContext))]
-    partial class BreshopContextModelSnapshot : ModelSnapshot
+    [Migration("20221121234703_InclusaoDaColunaEstoqueDisponivel")]
+    partial class InclusaoDaColunaEstoqueDisponivel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -47,14 +49,17 @@ namespace Breshop.Migrations
                 {
                     b.Property<int>("IdUsuario")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("CD_USUARIO")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Email")
-                        .HasColumnName("DS_EMAIL");
+                    b.Property<string>("CEP");
 
-                    b.Property<string>("Senha")
-                        .HasColumnName("DS_SENHA");
+                    b.Property<double>("Celular");
+
+                    b.Property<string>("Email");
+
+                    b.Property<string>("Endereco");
+
+                    b.Property<string>("Nome");
 
                     b.HasKey("IdUsuario");
 

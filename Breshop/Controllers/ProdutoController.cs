@@ -20,7 +20,7 @@ namespace Breshop.Controllers
         {
             try
             {
-                List<Produto> produtos = _produtoService.ListarProdutos();
+                List<Produto> produtos = _produtoService.ObterListaProdutosPorCategoria("Ofertas");
 
                 return View(produtos);
             }
@@ -64,38 +64,6 @@ namespace Breshop.Controllers
             }
         }
 
-        public async Task<IActionResult> Infantil(int? id)
-        {
-            try
-            {
-                List<Produto> produtos = _produtoService.ObterListaProdutosPorCategoria("Infantil");
-
-                return View(produtos);
-            }
-            catch (Exception)
-            {
-                List<Produto> produtos = new List<Produto>();
-
-                return View(produtos);
-            }
-        }
-
-        public async Task<IActionResult> Ofertas(int? id)
-        {
-            try
-            {
-                List<Produto> produtos = _produtoService.ObterListaProdutosPorCategoria("Ofertas");
-
-                return View(produtos);
-            }
-            catch (Exception)
-            {
-                List<Produto> produtos = new List<Produto>();
-
-                return View(produtos);
-            }
-        }
-
         public async Task<IActionResult> Masculino(int? id)
         {
             try
@@ -112,11 +80,11 @@ namespace Breshop.Controllers
             }
         }
 
-        public async Task<IActionResult> Relogio(int? id)
+        public async Task<IActionResult> Acessorio(int? id)
         {
             try
             {
-                List<Produto> produtos = _produtoService.ObterListaProdutosPorCategoria("Relogio");
+                List<Produto> produtos = _produtoService.ObterListaProdutosPorCategoria("Acessorio");
 
                 return View(produtos);
             }

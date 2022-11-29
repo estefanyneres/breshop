@@ -152,3 +152,41 @@ E:\Heavy Soldier Files\Desktop\TCC\Breshop\breshop\Breshop\obj\Debug\netcoreapp2
 E:\Heavy Soldier Files\Desktop\TCC\Breshop\breshop\Breshop\obj\Debug\netcoreapp2.1\Breshop.dll
 E:\Heavy Soldier Files\Desktop\TCC\Breshop\breshop\Breshop\obj\Debug\netcoreapp2.1\Breshop.pdb
 E:\Heavy Soldier Files\Desktop\TCC\Breshop\breshop\Breshop\obj\Debug\netcoreapp2.1\Breshop.csproj.CopyComplete
+C:\Users\lab54\Desktop\tcc\breshop\Breshop\bin\Debug\netcoreapp2.1\Breshop.deps.json
+C:\Users\lab54\Desktop\tcc\breshop\Breshop\bin\Debug\netcoreapp2.1\Breshop.runtimeconfig.json
+C:\Users\lab54\Desktop\tcc\breshop\Breshop\bin\Debug\netcoreapp2.1\Breshop.runtimeconfig.dev.json
+C:\Users\lab54\Desktop\tcc\breshop\Breshop\bin\Debug\netcoreapp2.1\Breshop.dll
+C:\Users\lab54\Desktop\tcc\breshop\Breshop\bin\Debug\netcoreapp2.1\Breshop.pdb
+C:\Users\lab54\Desktop\tcc\breshop\Breshop\bin\Debug\netcoreapp2.1\Breshop.Views.dll
+C:\Users\lab54\Desktop\tcc\breshop\Breshop\bin\Debug\netcoreapp2.1\Breshop.Views.pdb
+C:\Users\lab54\Desktop\tcc\breshop\Breshop\obj\Debug\netcoreapp2.1\Breshop.csprojAssemblyReference.cache
+C:\Users\lab54\Desktop\tcc\breshop\Breshop\obj\Debug\netcoreapp2.1\Breshop.csproj.CoreCompileInputs.cache
+C:\Users\lab54\Desktop\tcc\breshop\Breshop\obj\Debug\netcoreapp2.1\Breshop.RazorAssemblyInfo.cache
+C:\Users\lab54\Desktop\tcc\breshop\Breshop\obj\Debug\netcoreapp2.1\Breshop.RazorAssemblyInfo.cs
+C:\Users\lab54\Desktop\tcc\breshop\Breshop\obj\Debug\netcoreapp2.1\Breshop.AssemblyInfoInputs.cache
+C:\Users\lab54\Desktop\tcc\breshop\Breshop\obj\Debug\netcoreapp2.1\Breshop.AssemblyInfo.cs
+C:\Users\lab54\Desktop\tcc\breshop\Breshop\obj\Debug\netcoreapp2.1\Breshop.TagHelpers.input.cache
+C:\Users\lab54\Desktop\tcc\breshop\Breshop\obj\Debug\netcoreapp2.1\Breshop.TagHelpers.output.cache
+C:\Users\lab54\Desktop\tcc\breshop\Breshop\obj\Debug\netcoreapp2.1\Breshop.RazorCoreGenerate.cache
+C:\Users\lab54\Desktop\tcc\breshop\Breshop\obj\Debug\netcoreapp2.1\Razor\Views\CadastrarProdutos\Criar.g.cshtml.cs
+C:\Users\lab54\Desktop\tcc\breshop\Breshop\obj\Debug\netcoreapp2.1\Razor\Views\CadastrarProdutos\Editar.g.cshtml.cs
+C:\Users\lab54\Desktop\tcc\breshop\Breshop\obj\Debug\netcoreapp2.1\Razor\Views\CadastrarProdutos\Index.g.cshtml.cs
+C:\Users\lab54\Desktop\tcc\breshop\Breshop\obj\Debug\netcoreapp2.1\Razor\Views\CarrinhoProduto\Checkout.g.cshtml.cs
+C:\Users\lab54\Desktop\tcc\breshop\Breshop\obj\Debug\netcoreapp2.1\Razor\Views\CarrinhoProduto\Index.g.cshtml.cs
+C:\Users\lab54\Desktop\tcc\breshop\Breshop\obj\Debug\netcoreapp2.1\Razor\Views\Produto\Calcado.g.cshtml.cs
+C:\Users\lab54\Desktop\tcc\breshop\Breshop\obj\Debug\netcoreapp2.1\Razor\Views\Produto\Feminino.g.cshtml.cs
+C:\Users\lab54\Desktop\tcc\breshop\Breshop\obj\Debug\netcoreapp2.1\Razor\Views\Produto\Index.g.cshtml.cs
+C:\Users\lab54\Desktop\tcc\breshop\Breshop\obj\Debug\netcoreapp2.1\Razor\Views\Produto\Masculino.g.cshtml.cs
+C:\Users\lab54\Desktop\tcc\breshop\Breshop\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
+C:\Users\lab54\Desktop\tcc\breshop\Breshop\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+C:\Users\lab54\Desktop\tcc\breshop\Breshop\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
+C:\Users\lab54\Desktop\tcc\breshop\Breshop\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+C:\Users\lab54\Desktop\tcc\breshop\Breshop\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
+C:\Users\lab54\Desktop\tcc\breshop\Breshop\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
+C:\Users\lab54\Desktop\tcc\breshop\Breshop\obj\Debug\netcoreapp2.1\Breshop.RazorTargetAssemblyInfo.cache
+C:\Users\lab54\Desktop\tcc\breshop\Breshop\obj\Debug\netcoreapp2.1\Breshop.RazorTargetAssemblyInfo.cs
+C:\Users\lab54\Desktop\tcc\breshop\Breshop\obj\Debug\netcoreapp2.1\Breshop.Views.pdb
+C:\Users\lab54\Desktop\tcc\breshop\Breshop\obj\Debug\netcoreapp2.1\Breshop.dll
+C:\Users\lab54\Desktop\tcc\breshop\Breshop\obj\Debug\netcoreapp2.1\Breshop.pdb
+C:\Users\lab54\Desktop\tcc\breshop\Breshop\obj\Debug\netcoreapp2.1\Breshop.csproj.CopyComplete
+C:\Users\lab54\Desktop\tcc\breshop\Breshop\obj\Debug\netcoreapp2.1\Razor\Views\Produto\Acessorio.g.cshtml.cs
