@@ -32,8 +32,6 @@ namespace Breshop.Migrations
 
                     b.Property<double>("Preco");
 
-                    b.Property<string>("Sexo");
-
                     b.Property<string>("Tamanho");
 
                     b.Property<string>("UrlImagem");
@@ -47,17 +45,14 @@ namespace Breshop.Migrations
                 {
                     b.Property<int>("IdUsuario")
                         .ValueGeneratedOnAdd()
+                        .HasColumnName("CD_USUARIO")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("CEP");
+                    b.Property<string>("Email")
+                        .HasColumnName("DS_EMAIL");
 
-                    b.Property<double>("Celular");
-
-                    b.Property<string>("Email");
-
-                    b.Property<string>("Endereco");
-
-                    b.Property<string>("Nome");
+                    b.Property<string>("Senha")
+                        .HasColumnName("DS_SENHA");
 
                     b.HasKey("IdUsuario");
 
