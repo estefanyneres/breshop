@@ -1,4 +1,4 @@
-﻿using Breshop.Intefaces;
+﻿using Breshop.Interfaces;
 using Breshop.Models;
 using Breshop.Repository;
 using System;

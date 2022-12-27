@@ -16,7 +16,7 @@ namespace Breshop.Models
         [Column("DS_TAMANHO")]
         public string Tamanho { get; set; }
         
-        [Column("VL_TAMANHO")]
+        [Column("VL_PRODUTO")]
         public double Preco { get; set; }
 
         [Column("NM_MARCA")]
@@ -28,12 +28,8 @@ namespace Breshop.Models
         [Column("DS_URL_IMAGEM")]
         public string UrlImagem { get; set; }
 
-<<<<<<< HEAD
         [Column("IC_STATUS_PRODUTO")]
-        public string StatusProduto { get; set; }
-=======
         public bool EstoqueDisponivel { get; set; }
->>>>>>> 44e381ebc68365bddf781cf04f36ed986c5500e4
 
         [NotMapped]
         public IFormFile Imagem { get; set; }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Heavy Soldier Files\\Desktop\\TCC\\Breshop\\Breshop\\Breshop.csproj": {}
+    "E:\\Heavy Soldier Files\\Desktop\\TCC\\Breshop\\breshop\\Breshop\\Breshop.csproj": {}
   },
   "projects": {
-    "E:\\Heavy Soldier Files\\Desktop\\TCC\\Breshop\\Breshop\\Breshop.csproj": {
+    "E:\\Heavy Soldier Files\\Desktop\\TCC\\Breshop\\breshop\\Breshop\\Breshop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Heavy Soldier Files\\Desktop\\TCC\\Breshop\\Breshop\\Breshop.csproj",
+        "projectUniqueName": "E:\\Heavy Soldier Files\\Desktop\\TCC\\Breshop\\breshop\\Breshop\\Breshop.csproj",
         "projectName": "Breshop",
-        "projectPath": "E:\\Heavy Soldier Files\\Desktop\\TCC\\Breshop\\Breshop\\Breshop.csproj",
+        "projectPath": "E:\\Heavy Soldier Files\\Desktop\\TCC\\Breshop\\breshop\\Breshop\\Breshop.csproj",
         "packagesPath": "C:\\Users\\Usuário\\.nuget\\packages\\",
-        "outputPath": "E:\\Heavy Soldier Files\\Desktop\\TCC\\Breshop\\Breshop\\obj\\",
+        "outputPath": "E:\\Heavy Soldier Files\\Desktop\\TCC\\Breshop\\breshop\\Breshop\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -49,10 +49,13 @@
               "version": "[2.1.1, )",
               "autoReferenced": true
             },
-            "Microsoft.AspNetCore.Razor.Design": {
-              "suppressParent": "All",
+            "Microsoft.AspNetCore.Identity": {
               "target": "Package",
-              "version": "[2.2.0, )"
+              "version": "[2.1.1, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[7.0.1, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",

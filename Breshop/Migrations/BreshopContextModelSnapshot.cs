@@ -18,25 +18,51 @@ namespace Breshop.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("Breshop.Models.Carrinho", b =>
+                {
+                    b.Property<int>("IdCarrinho")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("CD_CARRINHO")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("IdProdutoCarrinho")
+                        .HasColumnName("CD_CARRINHO_PRODUTO");
+
+                    b.Property<int>("IdUsuario")
+                        .HasColumnName("ID_USUARIO");
+
+                    b.HasKey("IdCarrinho");
+
+                    b.ToTable("Carrinho");
+                });
+
             modelBuilder.Entity("Breshop.Models.Produto", b =>
                 {
                     b.Property<int>("IdProduto")
                         .ValueGeneratedOnAdd()
+                        .HasColumnName("CD_PRODUTO")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Categoria");
+                    b.Property<string>("Categoria")
+                        .HasColumnName("NM_CATEGORIA");
 
-                    b.Property<string>("Descricao");
+                    b.Property<string>("Descricao")
+                        .HasColumnName("DS_DESCRICAO");
 
-                    b.Property<bool>("EstoqueDisponivel");
+                    b.Property<bool>("EstoqueDisponivel")
+                        .HasColumnName("IC_STATUS_PRODUTO");
 
-                    b.Property<string>("Marca");
+                    b.Property<string>("Marca")
+                        .HasColumnName("NM_MARCA");
 
-                    b.Property<double>("Preco");
+                    b.Property<double>("Preco")
+                        .HasColumnName("VL_PRODUTO");
 
-                    b.Property<string>("Tamanho");
+                    b.Property<string>("Tamanho")
+                        .HasColumnName("DS_TAMANHO");
 
-                    b.Property<string>("UrlImagem");
+                    b.Property<string>("UrlImagem")
+                        .HasColumnName("DS_URL_IMAGEM");
 
                     b.HasKey("IdProduto");
 

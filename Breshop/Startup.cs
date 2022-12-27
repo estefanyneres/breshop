@@ -6,7 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Breshop.Models;
-using Breshop.Intefaces;
+using Breshop.Interfaces;
 using Breshop.Services;
 using Breshop.Repository;
 
@@ -36,6 +36,14 @@ namespace Breshop
             // Injeção de dependencia
             services.AddTransient<IProdutoService, ProdutoService>();
             services.AddTransient<IProdutoRepository, ProdutoRepository>();
+            services.AddTransient<IUsuarioService, UsuarioService>();
+            services.AddTransient<IUsuarioRepository, UsuarioRepository>();
+
+            services.AddAuthorization(auth =>
+            {
+                auth.AddPolicy("Admin", policy => policy.RequireClaim("Administrador"));
+                auth.AddPolicy("Cliente", policy => policy.RequireClaim("Cliente"));
+            });
 
             services.AddDbContext<BreshopContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("BreshopContext")));
@@ -62,7 +70,7 @@ namespace Breshop
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Produto}/{action=Index}/{id?}");
+                    template: "{controller=Produto}/{action=Ofertas}/{id?}");
             });
         }
     }

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Breshop.Models
@@ -8,6 +9,18 @@ namespace Breshop.Models
         [Key]
         [Column("CD_USUARIO")]
         public int IdUsuario { get; set; }
+
+        [Column("NM_USUARIO")]
+        public string Nome { get; set; }
+
+        [Column("DS_TELEFONE")]
+        public string Telefone { get; set; }
+
+        [Column("DS_CEP")]
+        public string Cep { get; set; }
+
+        [Column("DS_ENDERECO")]
+        public string Endereco { get; set; }
 
         [Column("DS_EMAIL")]
         public string Email { get; set; }

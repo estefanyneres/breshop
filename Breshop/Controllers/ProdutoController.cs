@@ -3,24 +3,27 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Breshop.Models;
-using Breshop.Intefaces;
+using Breshop.Interfaces;
 
 namespace Breshop.Controllers
 {
-    public class ProdutoController : Controller
+    public class ProdutoController : BaseController
     {
         private readonly IProdutoService _produtoService;
+
 
         public ProdutoController(IProdutoService produtoService)
         {
             _produtoService = produtoService;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Ofertas()
         {
             try
             {
                 List<Produto> produtos = _produtoService.ObterListaProdutosPorCategoria("Ofertas");
+
+                ViewData["RETORNO"] = _usuarioAutenticado;
 
                 return View(produtos);
             }

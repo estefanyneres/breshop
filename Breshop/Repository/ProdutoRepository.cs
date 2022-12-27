@@ -1,4 +1,4 @@
-﻿using Breshop.Intefaces;
+﻿using Breshop.Interfaces;
 using Breshop.Models;
 using System;
 using System.Collections.Generic;
@@ -106,6 +106,7 @@ namespace Breshop.Repository
                 return produtos;
             }
         }
+
         public List<Produto> ListarProdutos()
         {
             List<Produto> produtos = new List<Produto>();

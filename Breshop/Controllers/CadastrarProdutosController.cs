@@ -1,17 +1,18 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Breshop.Models;
-using Breshop.Intefaces;
 using Microsoft.AspNetCore.Http;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
 using System;
 using Newtonsoft.Json;
+using Microsoft.AspNetCore.Authorization;
+using Breshop.Interfaces;
 
 namespace Breshop.Controllers
 {
-    public class CadastrarProdutosController : Controller
+    public class CadastrarProdutosController : BaseController
     {
         private readonly IProdutoService _produtoService;
         private IHostingEnvironment Environment;
@@ -125,7 +126,7 @@ namespace Breshop.Controllers
             {
                 string path = this.Environment.WebRootPath + @"\images\";
 
-                if (arquivo.ContentType == "image/jpg" || arquivo.ContentType == "image/png" || arquivo.ContentType == "image/jpeg")
+                if (arquivo != null && (arquivo.ContentType == "image/jpg" || arquivo.ContentType == "image/png" || arquivo.ContentType == "image/jpeg"))
                 {
                     string wwwPath = this.Environment.WebRootPath;
                     string contentPath = this.Environment.ContentRootPath;
