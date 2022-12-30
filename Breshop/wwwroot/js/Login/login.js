@@ -16,7 +16,7 @@ $('.login').on('submit', function (e) {
 
     $.ajax({
         type: 'POST',
-        url: 'Login/AutenticarUsuario',
+        url: 'AutenticarUsuario',
         datatype: 'json',
         data: json,
         success: function (result) {
@@ -29,13 +29,14 @@ $('.login').on('submit', function (e) {
                         $state.html('Entrar');
                         $this.removeClass('ok loading');
                         working = false;
-                    }, 4000);
-                }, 3000);
+                    }, 2000);
+                    $(location).attr('href', window.location.origin + '/Produto/Ofertas');
+                }, 400);
 
-                setTimeout(
-                    function () {
-                        $(location).attr('href', window.location.origin + '/Produto/Ofertas');
-                    }, 5000);
+                //setTimeout(
+                //    function () {
+                        
+                //    }, 200);
             }
             else {
                 setTimeout(function () {

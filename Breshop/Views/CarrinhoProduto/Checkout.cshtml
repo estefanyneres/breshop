@@ -1,18 +1,61 @@
-﻿@model Breshop.Models.Produto
+﻿@model List<Breshop.Models.Produto>
 
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="pt">
 <head>
-
+    <link rel="stylesheet" href="~/css/Carrinho.css" />
+    <script class="u-script" type="text/javascript" src="~/js/jquery.js"></script>
+    <script class="u-script" type="text/javascript" src="~/js/Carrinho/Carrihno.js"></script>
 </head>
 <body class="u-body u-xl-mode" data-lang="pt">
-    <div class="u-clearfix u-sheet u-sheet-1">
-        <h2>Checkout</h2>
-        <h4>Produto</h4>
+    <div class='subject'>DailyUI #002 <strong>Credit Card Checkout</strong></div>
+
+    <div class='checkout'>
+        <div class='order'>
+            <h2>Checkout</h2>
+            <h5>Order #0101</h5>
+            @foreach (var item in Model)
+            {
+                <ul class='order-list'>
+                    <li><img src='@item.UrlImagem'><h4>@item.Descricao</h4><h5>$@item.Preco</h5></li>
+                </ul>
+            }
+            <h5 class='total'>Total</h5><h1>$167.50</h1>
+        </div>
+        <h2>Dados da entrega:</h2>
+        <div id='payment' class='payment'>
+            <div class='card-form'>
+                <label title='Estado'>Estado:</label>
+                <p class='field'>
+                    <input type='text' id='Estado' name='Estado' placeholder='São Paulo' pattern='\d*' title='Estado' />
+                </p>
+                <label title='Cidade'>Cidade:</label>
+                <p class='field'>
+                    <input type='text' id='Cidade' name='Cidade' placeholder='Santos' pattern='\d*' title='Cidade' />
+                </p>
+                <label title='Bairro'>Bairro:</label>
+                <p class='field'>
+                    <input type='text' id='Bairro' name='Bairro' placeholder='Jardim São Manoel' pattern='\d*' title='Bairro' />
+                </p>
+                <label title='endereco'>Endereço:</label>
+                <p class='field'>
+                    <input type='text' id='endereco' name='endereco' placeholder='Rua Nicolau Moran' pattern='\d*' title='endereco' />
+                </p>
+                <label title='Numero'>Numero:</label>
+                <p class='field'>
+                    <input type='text' id='Numero' name='Numero' placeholder='Rua Nicolau Moran' pattern='\d*' title='Numero' />
+                </p>
+                <button class='button-cta' title='Confirme sua compra'><span>Confirmar</span></button>
+            </div>
+        </div>
+        <div id='paid' class='paid'>
+            <svg id='icon-paid' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 310.277 310.277" style="enable-background:new 0 0 310.277 310.277;" xml:space="preserve" width="180px" height="180px">
+            <path d="M155.139,0C69.598,0,0,69.598,0,155.139c0,85.547,69.598,155.139,155.139,155.139   c85.547,0,155.139-69.592,155.139-155.139C310.277,69.598,240.686,0,155.139,0z M144.177,196.567L90.571,142.96l8.437-8.437   l45.169,45.169l81.34-81.34l8.437,8.437L144.177,196.567z" fill="#3ac569" /></svg>
+            <h2>Your payment was completed.</h2>
+            <h2>Thank you!</h2>
+        </div>
     </div>
-    <div>
-        <a asp-controller="Produto" asp-action="Index">Voltar</a>
-    </div>
+    <div class='icon-credits'>Outlined icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> & <a href="http://www.flaticon.com/authors/abhimanyu-rana" title="Abhimanyu Rana">Abhimanyu Rana</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 </body>
 
 

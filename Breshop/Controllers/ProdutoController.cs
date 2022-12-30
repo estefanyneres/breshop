@@ -21,11 +21,16 @@ namespace Breshop.Controllers
         {
             try
             {
-                List<Produto> produtos = _produtoService.ObterListaProdutosPorCategoria("Ofertas");
+                if (_usuarioAutenticado)
+                {
+                    List<Produto> produtos = _produtoService.ObterListaProdutosPorCategoria("Ofertas");
 
-                ViewData["RETORNO"] = _usuarioAutenticado;
+                    ViewData["RETORNO"] = _usuarioAutenticado;
 
-                return View(produtos);
+                    return View(produtos);
+                }
+
+                return RedirectToAction("Index" ,"Login");
             }
             catch (Exception)
             {
@@ -39,9 +44,16 @@ namespace Breshop.Controllers
         {
             try
             {
-                List<Produto> produtos = _produtoService.ObterListaProdutosPorCategoria("Calcado");
+                if (_usuarioAutenticado)
+                {
+                    List<Produto> produtos = _produtoService.ObterListaProdutosPorCategoria("Calcado");
 
-                return View(produtos);
+                    ViewData["RETORNO"] = _usuarioAutenticado;
+
+                    return View(produtos);
+                }
+
+                return RedirectToAction("Index" ,"Login");
             }
             catch (Exception)
             {
@@ -55,9 +67,16 @@ namespace Breshop.Controllers
         {
             try
             {
-                List<Produto> produtos = _produtoService.ObterListaProdutosPorCategoria("Feminino");
+                if (_usuarioAutenticado)
+                {
+                    List<Produto> produtos = _produtoService.ObterListaProdutosPorCategoria("Feminino");
 
-                return View(produtos);
+                    ViewData["RETORNO"] = _usuarioAutenticado;
+
+                    return View(produtos);
+                }
+
+                return RedirectToAction("Index" ,"Login");
             }
             catch (Exception)
             {
@@ -71,9 +90,16 @@ namespace Breshop.Controllers
         {
             try
             {
-                List<Produto> produtos = _produtoService.ObterListaProdutosPorCategoria("Masculino");
+                if (_usuarioAutenticado)
+                {
+                    List<Produto> produtos = _produtoService.ObterListaProdutosPorCategoria("Masculino");
 
-                return View(produtos);
+                    ViewData["RETORNO"] = _usuarioAutenticado;
+
+                    return View(produtos);
+                }
+
+                return RedirectToAction("Index" ,"Login");
             }
             catch (Exception)
             {
@@ -87,9 +113,16 @@ namespace Breshop.Controllers
         {
             try
             {
-                List<Produto> produtos = _produtoService.ObterListaProdutosPorCategoria("Acessorio");
+                if (_usuarioAutenticado)
+                {
+                    List<Produto> produtos = _produtoService.ObterListaProdutosPorCategoria("Acessorio");
 
-                return View(produtos);
+                    ViewData["RETORNO"] = _usuarioAutenticado;
+
+                    return View(produtos);
+                }
+
+                return RedirectToAction("Index" ,"Login");
             }
             catch (Exception)
             {

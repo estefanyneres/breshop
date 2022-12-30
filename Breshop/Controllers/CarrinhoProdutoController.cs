@@ -20,12 +20,28 @@ namespace Breshop.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            if (_usuarioAutenticado)
+            {
+                ViewData["RETORNO"] = _usuarioAutenticado;
+
+                return View();
+            }
+
+            return RedirectToAction("Index" ,"Login");
         }
 
         public IActionResult Checkout()
         {
-            return View();
+            if (_usuarioAutenticado)
+            {
+                List<Produto> produtos = _produtoService.ObterListaProdutosPorCategoria("Calcado");
+
+                ViewData["RETORNO"] = _usuarioAutenticado;
+
+                return View(produtos);
+            }
+
+            return RedirectToAction("Index" ,"Login");
         }
     }
 }

@@ -97,7 +97,7 @@ namespace Breshop.Repository
 
             try
             {
-                produtos = _context.Produto.Where(x => x.Categoria == Categoria).ToList();
+                produtos = _context.Produto.Where(x => x.Categoria == Categoria && x.EstoqueDisponivel).ToList();
 
                 return produtos;
             }

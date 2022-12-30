@@ -16,6 +16,10 @@
 #login {
     display: none;
 }
+.divisao-layout {
+
+    display: none;
+}
 
 @keyframes spinner {
     0% {
@@ -40,7 +44,6 @@
     min-height: 100%;
     padding: 20px;
     background: rgba(211, 211, 211, 0.10);
-    margin-top: 15%;
 }
 
 .login {
@@ -113,7 +116,7 @@
         .login input:focus {
             outline: none;
             color: #444;
-            border-color: #2196f3;
+            border-color: #E09248;
             border-left-width: 35px;
         }
 
@@ -125,7 +128,7 @@
 
     .login a {
         font-size: 0.8em;
-        color: #2196f3;
+        color: #E09248;
         text-decoration: none;
     }
 
@@ -142,7 +145,7 @@
         width: 100%;
         height: 100%;
         padding: 10px 10px;
-        background: #2196f3;
+        background: #E09248;
         color: #fff;
         display: block;
         border: none;
@@ -177,7 +180,7 @@
         }
 
     .login:not(.loading) button:hover {
-        box-shadow: 0px 1px 3px #2196f3;
+        box-shadow: 0px 1px 3px #E09248;
     }
 
     .login:not(.loading) button:focus {

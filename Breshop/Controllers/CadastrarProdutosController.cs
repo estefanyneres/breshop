@@ -6,8 +6,6 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
 using System;
-using Newtonsoft.Json;
-using Microsoft.AspNetCore.Authorization;
 using Breshop.Interfaces;
 
 namespace Breshop.Controllers
@@ -27,20 +25,27 @@ namespace Breshop.Controllers
         {
             try
             {
-                List<Produto> produtos = new List<Produto>();
-
-                if (string.IsNullOrWhiteSpace(Categoria))
+                if (_usuarioAutenticado)
                 {
-                    produtos = _produtoService.ListarProdutos();
+                    ViewData["RETORNO"] = _usuarioAutenticado;
+
+                    List<Produto> produtos = new List<Produto>();
+
+                    if (string.IsNullOrWhiteSpace(Categoria))
+                    {
+                        produtos = _produtoService.ListarProdutos();
+                        return View(produtos);
+                    }
+
+                    produtos = _produtoService.ObterListaProdutosPorCategoria(Categoria);
+
+                    ViewBag.CategoriaSelecionada = Categoria;
+                    ViewBag.Message = produtos == null || produtos.Count == 0 ? "Nenhum produto encontrado!" : null;
+
                     return View(produtos);
                 }
 
-                produtos = _produtoService.ObterListaProdutosPorCategoria(Categoria);
-
-                ViewBag.CategoriaSelecionada = Categoria;
-                ViewBag.Message = produtos == null || produtos.Count == 0 ? "Nenhum produto encontrado!" : null;
-
-                return View(produtos);
+                return RedirectToAction("Index", "Login");
             }
             catch (Exception ex)
             {
@@ -51,76 +56,117 @@ namespace Breshop.Controllers
 
         public async Task<IActionResult> Criar(Produto produto)
         {
-            if (string.IsNullOrWhiteSpace(produto.Marca))
+            try
             {
-                return View(produto);
-            }
+                if (_usuarioAutenticado)
+                {
+                    ViewData["RETORNO"] = _usuarioAutenticado;
 
-            if (SalvarImagem(produto.Imagem) == "")
+                    if (string.IsNullOrWhiteSpace(produto.Marca))
+                    {
+                        return View(produto);
+                    }
+
+                    if (SalvarImagem(produto.Imagem) == "")
+                    {
+                        ViewBag.Message = "Tipo da imagem não suportado! Somente jpg, png e jpeg";
+                    }
+
+                    produto.UrlImagem = SalvarImagem(produto.Imagem);
+
+                    bool produtoAdicionado = _produtoService.AdicionarProduto(produto);
+
+                    if (produtoAdicionado)
+                    {
+                        return View(produto);
+                    }
+                    else
+                    {
+                        produto = new Produto();
+                        ViewBag.Message = "Houve um erro ao adicionar o produto.";
+                    }
+
+                    return View(produto);
+                }
+
+                return RedirectToAction("Index", "Login");
+            }
+            catch (Exception ex)
             {
-                ViewBag.Message = "Tipo da imagem não suportado! Somente jpg, png e jpeg";
+                ViewBag.Message = ex.Message;
+                return View();
             }
-
-            produto.UrlImagem = SalvarImagem(produto.Imagem);
-
-            bool produtoAdicionado = _produtoService.AdicionarProduto(produto);
-
-            if (produtoAdicionado)
-            {
-                return View(produto);
-            }
-            else
-            {
-                produto = new Produto();
-                ViewBag.Message = "Houve um erro ao adicionar o produto.";
-            }
-
-            return View(produto);
         }
 
         public async Task<IActionResult> Deletar(int id, string Categoria)
         {
-            if (id == 0)
+            try
             {
-                ViewBag.Message = "Nenhum produto encontrado!";
+                if (_usuarioAutenticado)
+                {
+                    if (id == 0)
+                    {
+                        ViewBag.Message = "Nenhum produto encontrado!";
+                    }
+
+                    bool produtoExcluido = _produtoService.DeletarProduto(id);
+
+                    if (!produtoExcluido)
+                    {
+                        throw new Exception("Erro ao excluir produto");
+                    }
+
+                    ViewBag.Message = "";
+
+                    return RedirectToAction("Index", new { Categoria });
+                }
+
+                return RedirectToAction("Index", "Login");
             }
-
-            bool produtoExcluido = _produtoService.DeletarProduto(id);
-
-            if (!produtoExcluido)
+            catch (Exception ex)
             {
-                throw new Exception("Erro ao excluir produto");
+                ViewBag.Message = ex.Message;
+                return View();
             }
-
-            ViewBag.Message = "";
-
-            return RedirectToAction("Index", new { Categoria });
         }
 
         public async Task<IActionResult> Editar(int id, string Categoria, Produto produto)
         {
-            Produto produtoExistente = _produtoService.ObterProdutoPorId(id);
-
-            if (produtoExistente == null)
+            try
             {
-                ViewBag.Message = "Nenhum produto encontrado!";
-                return RedirectToAction("Index", new { Categoria });
+                if (_usuarioAutenticado)
+                {
+                    Produto produtoExistente = _produtoService.ObterProdutoPorId(id);
+
+                    if (produtoExistente == null)
+                    {
+                        ViewBag.Message = "Nenhum produto encontrado!";
+                        return RedirectToAction("Index", new { Categoria });
+                    }
+                    if (produto.IdProduto != 0)
+                    {
+                        produto.UrlImagem = produtoExistente.UrlImagem;
+
+                        if (produto.Imagem != null)
+                            produto.UrlImagem = SalvarImagem(produto.Imagem);
+
+                        ViewBag.Message = "Produto Atualizado com sucesso!";
+                        return View(_produtoService.AtualizarProduto(produto));
+                    }
+
+                    return View(produtoExistente);
+                }
+
+                return RedirectToAction("Index", "Login");
             }
-            if(produto.IdProduto != 0)
+            catch (Exception ex)
             {
-                produto.UrlImagem = produtoExistente.UrlImagem;
-
-                if (produto.Imagem != null) 
-                    produto.UrlImagem = SalvarImagem(produto.Imagem);
-
-                ViewBag.Message = "Produto Atualizado com sucesso!";
-                return View(_produtoService.AtualizarProduto(produto));
+                ViewBag.Message = ex.Message;
+                return View();
             }
-
-            return View(produtoExistente);
         }
 
-        public string SalvarImagem(IFormFile arquivo)
+        private string SalvarImagem(IFormFile arquivo)
         {
             try
             {
@@ -155,6 +201,5 @@ namespace Breshop.Controllers
                 return "";
             }
         }
-
     }
 }
