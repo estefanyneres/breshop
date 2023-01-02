@@ -28,6 +28,7 @@ namespace Breshop.Controllers
                 if (_usuarioAutenticado)
                 {
                     ViewData["RETORNO"] = _usuarioAutenticado;
+                    ViewData["IDUSUARIO"] = _IdUsuario;
 
                     List<Produto> produtos = new List<Produto>();
 
@@ -61,6 +62,7 @@ namespace Breshop.Controllers
                 if (_usuarioAutenticado)
                 {
                     ViewData["RETORNO"] = _usuarioAutenticado;
+                    ViewData["IDUSUARIO"] = _IdUsuario;
 
                     if (string.IsNullOrWhiteSpace(produto.Marca))
                     {
@@ -104,6 +106,8 @@ namespace Breshop.Controllers
             {
                 if (_usuarioAutenticado)
                 {
+                    ViewData["RETORNO"] = _usuarioAutenticado;
+                    ViewData["IDUSUARIO"] = _IdUsuario;
                     if (id == 0)
                     {
                         ViewBag.Message = "Nenhum produto encontrado!";
@@ -136,6 +140,8 @@ namespace Breshop.Controllers
             {
                 if (_usuarioAutenticado)
                 {
+                    ViewData["RETORNO"] = _usuarioAutenticado;
+                    ViewData["IDUSUARIO"] = _IdUsuario;
                     Produto produtoExistente = _produtoService.ObterProdutoPorId(id);
 
                     if (produtoExistente == null)

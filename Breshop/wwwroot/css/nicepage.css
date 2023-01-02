@@ -9,6 +9,14 @@
     gap: 20px;
 }
 
+.icone-adicionar-carrinho {
+    width: 4%;
+}
+
+.icone-remover-carrinho {
+    width: 4%;
+}
+
 .img-produto {
     width: 150px;
     text-align:center;

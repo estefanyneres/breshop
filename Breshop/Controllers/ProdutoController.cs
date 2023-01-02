@@ -26,6 +26,7 @@ namespace Breshop.Controllers
                     List<Produto> produtos = _produtoService.ObterListaProdutosPorCategoria("Ofertas");
 
                     ViewData["RETORNO"] = _usuarioAutenticado;
+                    ViewData["IDUSUARIO"] = _IdUsuario;
 
                     return View(produtos);
                 }
@@ -49,6 +50,7 @@ namespace Breshop.Controllers
                     List<Produto> produtos = _produtoService.ObterListaProdutosPorCategoria("Calcado");
 
                     ViewData["RETORNO"] = _usuarioAutenticado;
+                    ViewData["IDUSUARIO"] = _IdUsuario;
 
                     return View(produtos);
                 }
@@ -72,6 +74,7 @@ namespace Breshop.Controllers
                     List<Produto> produtos = _produtoService.ObterListaProdutosPorCategoria("Feminino");
 
                     ViewData["RETORNO"] = _usuarioAutenticado;
+                    ViewData["IDUSUARIO"] = _IdUsuario;
 
                     return View(produtos);
                 }
@@ -95,6 +98,7 @@ namespace Breshop.Controllers
                     List<Produto> produtos = _produtoService.ObterListaProdutosPorCategoria("Masculino");
 
                     ViewData["RETORNO"] = _usuarioAutenticado;
+                    ViewData["IDUSUARIO"] = _IdUsuario;
 
                     return View(produtos);
                 }
@@ -118,6 +122,7 @@ namespace Breshop.Controllers
                     List<Produto> produtos = _produtoService.ObterListaProdutosPorCategoria("Acessorio");
 
                     ViewData["RETORNO"] = _usuarioAutenticado;
+                    ViewData["IDUSUARIO"] = _IdUsuario;
 
                     return View(produtos);
                 }

@@ -7,6 +7,7 @@ namespace Breshop.Controllers
     public class BaseController : Controller
     {
         protected static bool _usuarioAutenticado;
+        protected static int _IdUsuario;
 
         public BaseController()
         {

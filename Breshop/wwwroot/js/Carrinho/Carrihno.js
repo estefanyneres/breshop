@@ -38,6 +38,7 @@ $(function () {
                     $(this).parent().find('svg').animate({ opacity: '0.1' }, "slow");
                     $(this).parent().find('svg').animate({ opacity: '1' }, "slow");
                     $(this).parent().find('svg').animate({ opacity: '0.1' }, "slow");
+                    $(this).parent().find('svg').animate({ opacity: '0.1' }, "slow");
                     $(this).parent().find('svg').animate({ opacity: '1' }, "slow");
                 }
             }
@@ -54,6 +55,20 @@ $(function () {
         }
     });
 });
+
+function AdicionarNoCarrinho(idProduto) {
+
+    var idUsuario = $('#idUsuario').val();
+
+    $.ajax({
+        type: 'GET',
+        url: location.origin + '/CarrinhoProduto/AdicionarProdutoCarrinho?' + idUsuario + '&' + idProduto,
+        success: function (result) {
+
+        }
+    });
+
+}
 
 
 function EnviarPedido() {

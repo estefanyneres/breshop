@@ -12,10 +12,12 @@ namespace Breshop.Controllers
     public class CarrinhoProdutoController : BaseController
     {
         private readonly IProdutoService _produtoService;
+        private readonly ICarrinhoService _carrinhoService;
 
-        public CarrinhoProdutoController(IProdutoService produtoService)
+        public CarrinhoProdutoController(IProdutoService produtoService, ICarrinhoService carrinhoService)
         {
             _produtoService = produtoService;
+            _carrinhoService = carrinhoService;
         }
 
         public IActionResult Index()
@@ -23,25 +25,38 @@ namespace Breshop.Controllers
             if (_usuarioAutenticado)
             {
                 ViewData["RETORNO"] = _usuarioAutenticado;
+                ViewData["IDUSUARIO"] = _IdUsuario;
 
                 return View();
             }
 
-            return RedirectToAction("Index" ,"Login");
+            return RedirectToAction("Index", "Login");
         }
 
-        public IActionResult Checkout()
+        public IActionResult Checkout(int idUsuario)
         {
             if (_usuarioAutenticado)
             {
-                List<Produto> produtos = _produtoService.ObterListaProdutosPorCategoria("Calcado");
+                List<Produto> produtos = _carrinhoService.ObterProdutosCarrinhoPorIdUsuario(idUsuario);
 
                 ViewData["RETORNO"] = _usuarioAutenticado;
+                ViewData["IDUSUARIO"] = _IdUsuario;
 
                 return View(produtos);
             }
 
-            return RedirectToAction("Index" ,"Login");
+            return RedirectToAction("Index", "Login");
+        }
+
+        public void AdicionarProdutoCarrinho([FromRoute] int idUsuario, [FromRoute] int idProduto)
+        {
+            if (_usuarioAutenticado)
+            {
+                List<Produto> produtos = _carrinhoService.ObterProdutosCarrinhoPorIdUsuario(idUsuario);
+
+                ViewData["RETORNO"] = _usuarioAutenticado;
+                ViewData["IDUSUARIO"] = _IdUsuario;
+            }
         }
     }
 }

@@ -7,7 +7,7 @@ namespace Breshop.Models
     {
         [Key]
         [Column("CD_CARRINHO_PRODUTO")]
-        public int IdProdutoCarrinho { get; set; }
+        public int IdCarrinhoProduto { get; set; }
 
         [Column("ID_CARRINHO")]
         public int IdCarrinho { get; set; }

@@ -13,7 +13,7 @@ namespace Breshop.Controllers
         private readonly IUsuarioService _usuarioService;
 
         public LoginController(IUsuarioService usuarioService)
-        { 
+        {
             _usuarioService = usuarioService;
         }
 
@@ -28,7 +28,10 @@ namespace Breshop.Controllers
             _usuarioAutenticado = _usuarioService.ValidaCredenciais(usuario);
 
             if (_usuarioAutenticado)
+            {
+                _IdUsuario = _usuarioService.SetarUsuario(usuario.IdUsuario);
                 return Json(JsonConvert.SerializeObject(new { autenticado = "true", message = $"Usuario autenticado com sucesso." }));
+            }
 
             return Json(JsonConvert.SerializeObject(new { autenticado = "false", message = $"Credenciais inválidas." }));
         }

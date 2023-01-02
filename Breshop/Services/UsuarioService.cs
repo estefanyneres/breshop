@@ -9,6 +9,7 @@ namespace Breshop.Services
     public class UsuarioService: IUsuarioService
     {
         private readonly IUsuarioRepository _usuarioRepository;
+        private Usuario retornoUsuario;
 
         public UsuarioService(IUsuarioRepository usuarioRepository)
         {
@@ -20,7 +21,7 @@ namespace Breshop.Services
             try
             {
                 var retornoHash = RetornarMD5(usuario.Senha);
-                var retornoUsuario = _usuarioRepository.ObterCredenciais(usuario.IdUsuario);
+                retornoUsuario = _usuarioRepository.ObterCredenciais(usuario.IdUsuario);
 
                 if(retornoUsuario.Senha == retornoHash)
                 {
@@ -32,6 +33,18 @@ namespace Breshop.Services
             catch (Exception ex)
             {
                 return false;
+            }
+        }
+
+        public int SetarUsuario(int usuario)
+        {
+            try
+            {
+                return retornoUsuario.IdUsuario;
+            }
+            catch (Exception ex)
+            {
+                return 0;
             }
         }
 

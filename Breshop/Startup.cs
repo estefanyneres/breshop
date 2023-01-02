@@ -38,6 +38,8 @@ namespace Breshop
             services.AddTransient<IProdutoRepository, ProdutoRepository>();
             services.AddTransient<IUsuarioService, UsuarioService>();
             services.AddTransient<IUsuarioRepository, UsuarioRepository>();
+            services.AddTransient<ICarrinhoService, CarrinhoService>();
+            services.AddTransient<ICarrinhoRepository, CarrinhoRepository>();
 
             services.AddAuthorization(auth =>
             {

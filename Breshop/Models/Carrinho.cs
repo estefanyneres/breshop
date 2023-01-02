@@ -14,5 +14,8 @@ namespace Breshop.Models
 
         [Column("CD_CARRINHO_PRODUTO")]
         public int IdProdutoCarrinho { get; set; }
+
+        [Column("IC_CARRINHO_DISPONIVEL")]
+        public bool CarrinhoDisponivel { get; set; }
     }
 }

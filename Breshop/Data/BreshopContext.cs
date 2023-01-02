@@ -20,5 +20,7 @@ namespace Breshop.Models
         public DbSet<Breshop.Models.Usuario> Usuario { get; set; }
 
         public DbSet<Breshop.Models.Carrinho> Carrinho { get; set; }
+
+        public DbSet<Breshop.Models.CarrinhoProduto> CarrinhoProduto { get; set; }
     }
 }

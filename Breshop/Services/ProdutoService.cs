@@ -1,10 +1,7 @@
 ﻿using Breshop.Interfaces;
 using Breshop.Models;
-using Breshop.Repository;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Breshop.Services
 {
